@@ -63,7 +63,7 @@ def ytm(df):
             temp.increment_date(df['Dirty'][i])
         ytm_list.append(round(temp.get_ytm(), 4) * 100)
 
-    df['YTM'] = ytm_list
+    df['YTM'] = [round(x,2) for x in ytm_list]
 
 
 # Calculate dirty price of bonds
