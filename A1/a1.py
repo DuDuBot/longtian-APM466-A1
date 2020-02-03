@@ -75,8 +75,8 @@ def dirty_price(df):
         ai.append(round(((184 - day_diff) / 365) * df['Coupon'][i], 2))
         dp.append(df['Price'][i] + ai[i])
 
-    df['Accrued'] = ai
-    df['Dirty'] = dp
+    df['Accrued'] = [round(x,2) for x in ai]
+    df['Dirty'] = [round(x,2) for x in dp]
 
 
 # Plot the YTM curves
